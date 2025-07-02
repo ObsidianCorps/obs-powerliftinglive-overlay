@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 # obs-powerliftinglive-overlay
-=======
-# PowerliftingLive.com Stream Overlay Guide
+
 
 A comprehensive guide for clubs and nations using PowerliftingLive.com to enhance their live streaming with professional overlays for powerlifting competitions.
 
