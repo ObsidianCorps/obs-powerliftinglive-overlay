@@ -389,10 +389,4 @@ Enable debug information by adding to CSS:
 - Position within scene composition
 
 ```
----
 
-## 📄 License
-
-This project is provided as-is for use with PowerliftingLive.com. Modify and distribute according to your needs.
-
->>>>>>> master
