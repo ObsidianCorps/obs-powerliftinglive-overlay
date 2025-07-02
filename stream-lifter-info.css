@@ -1,0 +1,222 @@
+/* Modern Artsy Stream Lifter Info Overlay */
+/* Hide all elements except the lifter info */
+
+/* Default color for all elements - black */
+* {
+    color: black;
+}
+
+/* Elements inside next_lifter_round should be white */
+.next_lifter_round * {
+    color: white !important;
+}
+
+/* Hide connection problems, notices, referee lights, clock, and current record */
+#plive_connection_problems,
+#notice_overlay,
+#referee_lights_overlay,
+#referee_lights,
+#current_record,
+#clock {
+    display: none !important;
+}
+
+/* Compact background - fits content */
+body {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: hidden;
+    width: fit-content;
+    height: fit-content;
+    display: inline-block;
+}
+
+/* Container styling - proper proportions */
+#container {
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(237, 41, 57, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    width: 1600px;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Lifter name - properly positioned */
+#next_lifter_name {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 450px;
+    height: auto;
+    font-size: 42px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ed2939;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(237, 41, 57, 0.1);
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Weight display - properly spaced */
+#next_lifter_weight {
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    font-size: 64px;
+    font-weight: 800;
+    color: #ed2939;
+    text-shadow: 0 4px 8px rgba(237, 41, 57, 0.2);
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #ed2939 0%, #c41e3a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: weightPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes weightPulse {
+    from {
+        transform: scale(1);
+        filter: drop-shadow(0 2px 4px rgba(237, 41, 57, 0.2));
+    }
+    to {
+        transform: scale(1.02);
+        filter: drop-shadow(0 4px 8px rgba(237, 41, 57, 0.3));
+    }
+}
+
+/* Hide team logo */
+#next_lifter_team,
+#next_lifter_team img {
+    display: none !important;
+}
+
+/* Place information - properly contained badge */
+#next_lifter_place {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 38px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #00a1de 0%, #0086b3 100%);
+    padding: 12px 22px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 161, 222, 0.3);
+    text-shadow: none;
+    max-width: 140px;
+    width: fit-content;
+    text-align: center;
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Lifts information - properly spaced layout */
+#next_lifter_lifts {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    font-size: 34px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+    overflow: hidden;
+    color:black;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Individual lift styling - large cards */
+.next_lifter_lift {
+    flex: 0 0 140px;
+  margin-bottom: 0;
+  color: black;
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 30px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.next_lifter_lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: rgba(237, 41, 57, 0.2);
+}
+
+/* Round information - properly sized white bold highlight */
+.next_lifter_round {
+    flex: 0 0 140px;
+    margin-bottom: 0;
+    color: #ffffff;
+    background: linear-gradient(135deg, #00a1de 0%, #0086b3 100%);
+    border-radius: 12px;
+    padding: 12px 16px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 30px;
+    box-shadow: 0 2px 8px rgba(0, 161, 222, 0.2);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Discipline labels - balanced typography */
+.next_lifter_discipline {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fixed sizes - no responsive adjustments needed */
+
+/* Ensure smooth transitions */
+* {
+    transition: all 0.3s ease;
+} 
